@@ -1,0 +1,266 @@
+---
+title: "Lab 1: Reproducible Data Visualization Workflow"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-tools: true
+execute:
+  warning: false
+  message: false
+---
+
+# Installing Packages
+
+```{r}
+library(tidyverse)
+library(here)
+library(fs)
+```
+
+```{r}
+here()
+```
+
+## Creating the Folders
+
+```{r}
+folders <- c(
+  "data",
+  "figures",
+  "scripts",
+  "tables",
+  "assignments",
+  "labs",
+  "portfolio"
+)
+
+folders %>%
+  purrr::walk(
+    \(
+      folder)
+    dir_create(
+      folder,
+      showWarnings = FALSE
+    )
+    )
+```
+
+## Questions
+
+1.  What path was printed?
+2.  Does it point to the correct course project?
+3.  Why is working from an R Project preferable to manually setting the working directory?
+
+## Answers
+
+1.  "/Users/jliggins/Desktop/Datavis/labs"
+2.  Yes
+3.  RStudio automatically manages the project's working directory for you.
+
+## Creating A Simulated Public Health Dataset
+
+```{r}
+set.seed(716)
+
+public_health_data <- tibble(
+  county = paste("Country",
+                   LETTERS[1:12]
+  ),
+  region = rep(
+    c("North", 
+      "Central", 
+      "South"
+      ),
+    each = 4
+  ),
+  adult_population = sample(
+    25000:15000,
+    12
+  ),
+  asthma_visits = sample(
+    150:2500,
+    12
+  ),
+  vaccination_rate = round(
+    runif(
+      12,65,95
+    ),
+    1
+  )
+) %>%
+  mutate(
+    asthma_visit_rate = round(
+      (asthma_visits / adult_population)*
+        100000,
+      1
+    )
+  )
+```
+
+## Saving the Dataset
+
+```{r}
+write_csv(
+  public_health_data,
+  here("data",
+       "county_health_data.csv")
+)
+```
+
+## Inspect the Data
+
+```{r}
+glimpse(
+  public_health_data
+)
+```
+
+```{r}
+summary_data <- public_health_data %>%
+  summarise(
+    number_of_counties = n(),
+    mean_vaccination_rate = mean(
+      vaccination_rate
+    ),
+    median_asthma_visit_rate = median(
+      asthma_visit_rate
+    )
+  )
+
+summary_data
+
+```
+
+## Questions
+
+1.  What does one row represent?
+2.  How many variables are included?
+3.  Which variables are categorical?
+4.  Which variables are numeric?
+5.  Which variable should be used to compare asthma burden fairly across counties?
+
+## Answer
+
+1.  One row represents the entire dataset of all 12 countries.
+2.  The original dataset contains 6 variables
+3.  country and region
+4.  Adult_population, Asthma_visits, Vaccination_rate, Asthma_visit_rate
+5.  Asthma_visit_rate
+
+## Creating a Ranked Vaccination Bar Chart
+
+```{r}
+vaccination_plot <- public_health_data %>%
+  ggplot(
+    aes(
+      x = reorder(county, vaccination_rate),
+      y = vaccination_rate
+    )
+  ) +
+  geom_col() +
+  geom_hline(
+    yintercept = 80,
+    linetype = "dashed"
+  ) +
+  coord_flip() +
+  labs(
+    title = "Vaccination Coverage by County",
+    subtitle = "Fictional countries ranked by simulated vaccination coverage",
+    x = "Country",
+    y = "Vaccination coverage (%)",
+    caption = "Values are simulated and intended for demonstration only."
+  ) +
+  theme_minimal()
+vaccination_plot
+```
+### Interpretation
+
+
+The figure shows differences in simulated vaccination coverage across the 12 counties, with some counties above the 80% reference target and others below it. The counties with the lowest vaccination rates appear furthest below the target and may warrant additional attention. Before using the graph for a real decision, actual vaccination data, population characteristics, data quality, geographic differences, and other factors affecting vaccination coverage would need to be considered.
+
+## Saving figure 
+
+```{r}
+ggsave(
+  filename = here(
+    "figures", 
+    "lab01_vaccination_coverage.png"
+  ),
+  plot = vaccination_plot,
+  width = 8,
+  height = 6,
+  dpi = 300
+)
+```
+
+## Independent Visualization 
+
+```{r}
+independent_plot <- public_health_data %>%
+  ggplot(
+    aes(
+      x = adult_population,
+      y = asthma_visits
+    )
+  ) +
+  geom_point(
+    size = 3
+  ) +
+  labs(
+    title = "Adult Population and Asthma Visits by County",
+    subtitle = "Relationships shown using simulated county-level data",
+    x = "Adult population",
+    y = "Asthma visits",
+    caption = "Data are simulated and intended for demonstration only."
+  ) +
+  theme_minimal()
+independent_plot
+```
+## Saving the Independent Variable
+
+```{r}
+ggsave(
+  filename = here(
+    "figures",
+    "independent_plot.png"
+  ),
+  plot = independent_plot,
+  width = 8,
+  height = 6,
+  dpi = 300
+)
+```
+## Reflection Questions
+
+### Why is reproducibility important in public health research and practice?
+
+Reproducibility is important because it allows other researchers and public health professionals to repeat an analysis and verify the results. It also improves transparency, accuracy, and trust in public health research. 
+
+## Question 2
+
+###How does a consistent project structure improve collaboration and review?
+
+A consistent project structure keeps data, scripts, figures, and other files organized in predictable locations. This makes it easier for team members to find files, understand the workflow review the analysis, and contribute to the project. 
+
+## Question 3
+
+### Why are relative paths preferable to absolute paths?
+
+Relative paths are preferable because they work across different computers and users as long as the project structure stays the same. Absolute paths, such as /Users/jliggins/Desktop/..., are specific to one computer and may not work when the project is shared.   
+
+## Question 4
+
+### How does GitHub contribute to reproducibility?
+
+GitHub help with reproducibility by storing and tracking project files, code, and changes over time. It allows researchers to collaborate, review previous versions, and share their work with others.  
+
+## Question 5
+
+### What was the most challenging part of the lab?
+
+The most challenging part of the lab was learning how to push things to Github, and how to organize the project structure and correctly use relative paths with here(). Understanding how the R Project, folders, and Github work together helped me better understand how to create a reproducible workflow.  
+
+
+
+
