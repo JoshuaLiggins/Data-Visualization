@@ -1,0 +1,182 @@
+---
+title: "Lab 2 Applying the Grammar of Graphics"
+author: "Joshua Liggins"
+subtitle: "Student Version"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-tools: true
+execute:
+  eval: false
+  warning: false
+  message: false
+---
+
+## Loading Packages
+
+```{r}
+library(tidyverse)
+library(gapminder)
+```
+
+## Prepare the Data
+
+```{r}
+gapminder_2007 <- gapminder %>%
+  filter(year == 2007) %>%
+  rename(
+    life_expectancy = lifeExp,
+    gdp_per_capita = gdpPercap,
+    population = pop
+  )
+```
+
+## Scatterplot
+
+```{r}
+ggplot(gapminder_2007,
+       aes(
+         x = gdp_per_capita,
+         y = life_expectancy,
+         color = continent
+       ))+
+  geom_point(
+    size = 3,
+    alpha = 0.8) +
+  scale_x_log10()+
+  scale_color_viridis_d()+
+  labs(
+    title = "GDP per capita and Life Expectancy in 2007",
+    x = "GDP per capita (US$)",
+    y = "Life Expectancy (Years)",
+    color = "Continent"
+  )+
+  theme_minimal()
+```
+
+## Bar-Chart
+
+```{r}
+# First I will calculate the mean life expectancy for each continent, then arrange the continents from lowest to highest.
+
+life_expectancy_continent <- gapminder_2007 %>%
+  group_by(continent) %>%
+  summarize(
+    mean_life_expectancy = mean(life_expectancy)
+  ) %>%
+  arrange(
+    mean_life_expectancy
+  )
+ggplot(
+  life_expectancy_continent,
+  aes(
+    x = mean_life_expectancy,
+    y = reorder(
+      continent,
+      mean_life_expectancy
+    )
+  )
+)+
+  geom_col()+
+  labs(
+    title = "Mean Life Expectancy by Continent in 2007",
+    x = "Mean Life Expectancy (Years)",
+    y = "Continent"
+  )+
+  theme_classic()
+```
+
+## Boxplot
+
+```{r}
+ggplot(gapminder_2007,
+       aes(
+         x = continent,
+         y = life_expectancy,
+         fill = continent
+       )) +
+  geom_boxplot()+
+  scale_fill_viridis_d() +
+  labs(
+    title = "Life Expectancy Across Continents in 2007",
+    x = "Continent",
+    y = "Life Expectancy (Years)",
+    fill = "Continent"
+  ) +
+  theme_classic()
+```
+
+## Faceting
+
+```{r}
+ggplot(gapminder_2007,
+       aes(
+         x = gdp_per_capita,
+         y = life_expectancy,
+       ))+
+  geom_point(
+    size = 2.5, 
+    alpha = 0.8
+  )+
+  scale_x_log10()+
+  facet_wrap(~ continent) +
+  labs(
+    title = "GDP per Capita and Life Expectancy by Continent in 2007",
+    x = "GDP per Capita (US$)",
+    y = "Life Expectancy (Years)"
+  )+
+  theme_minimal()
+```
+
+## Identify the Grammar 
+
+The scatterplot in part two of the lab uses the `gapminder_2007` as the dataset. The aesthetics map GDP per capita to the x-axis, life expectancy to the y-axis, and continent to the color. The geometry is `geom_point()`, which creates the scatterplot. The scale uses `scale_x_log10()` to display GDP per capita on a logarithmic scale and `scale_color_viridis_d()`for an accessible color palette. The labels include a title, descriptive x-axis and y-axis, and a legend title for continent. No facets are used in this graph. The theme is `theme_minimal()`which provides a clean and readable appearance. 
+
+## Independent Chart 
+
+```{r}
+ggplot(gapminder_2007,
+       aes(
+         x = gdp_per_capita,
+         y = life_expectancy,
+         color = continent
+       ))+
+  geom_point(
+    size = 3,
+    alpha = 0.8
+  )+
+  geom_smooth(
+    aes(group = 1),
+    method = "lm",
+    se = FALSE,
+    color = "black"
+  ) +
+  scale_x_log10()+
+  scale_color_viridis_d()+
+  labs(
+    title = "Economic Resources and Life Expectancy Across Countries in 2007",
+    x = "GDP per Capita (US$)",
+    y = "Life Expectancy (Years)",
+    color = "Continent"
+  ) +
+  theme_minimal()
+```
+
+## Reflection
+
+1. Which aesthetic mappings changed the meaning of the graph?
+
+- Coloring the points by continent added geographic context to the graph and made it possible to compare patterns across different regions. Mapping GDP per capita to the x-axis and life expectancy to the y-axis emphasized the relationship between economic resources and population health. 
+
+2. When did faceting improve interpretation?
+
+- Faceting improved interpretation when examining the GDP-life expectancy relationship separately by continent. It made it easier to see patterns within each continent without having all countries represented in the same panel. 
+
+3. Which graph most clearly communicated one finding?
+
+- The independent scatterplot most clearly communicated the finding that countries with higher GDP per capita generally tend to have higher life expectancy. The logarithmic x-axis and trend line made the overall relationship easier to identify. 
+
+
+
