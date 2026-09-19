@@ -1,0 +1,138 @@
+---
+title: "Lab 4: Visualization Redesign and Accessibility"
+author: "Joshua Liggins"
+format: html
+editor: visual
+---
+
+## Setup
+
+```{r}
+library(tidyverse)
+library(gapminder)
+
+gapminder_2007 <- gapminder %>%
+  filter(year == 2007) %>%
+  rename(
+    life_expectancy = lifeExp,
+    gdp_per_capita = gdpPercap,
+    population = pop
+  )
+```
+
+## Poor Graph
+
+```{r}
+#| label: poor-graph
+
+ggplot(gapminder_2007,
+       aes(
+         x = continent,
+         y = life_expectancy,
+         color = country
+       )) +
+  geom_point(size = 6) +
+  geom_jitter(width = 0.5) +
+  labs(
+    title = "life Expectancy",
+    x = "Continent",
+    y = "Life Expectancy",
+    color = "Country"
+  ) +
+  theme(
+    legend.position = "right",
+    axis.text.x = element_text(angle = 45),
+    panel.background = element_rect(fill = "gray"),
+    panel.grid = element_blank()
+  )
+```
+
+### Critique
+
+Identify five problems and explain their effects.
+
+- The graph has several problems that make it difficult to intertpret. First, using a different color for every country creates a very large and confusing legend. Second, the colors are not accessibility-friendly and make comparisons difficult for peolple with color-vision deficiencies. Third, the graph uses a feneric title that does not communicate the main finding. Fourth, jittering the points adds unnecessary visual variation and makes the exact comparison between observations harder. Fifth, countries are not meaningfully ordered, which makes it difficult to identify patterns across continents. Finally, the large points and crowded legend create visual clutter that distracts from the main public health message. 
+
+## Redesign 
+
+```{r}
+#| fig-alt: "Scatterplot showing the relationship between GDP per capita and life expectancy among countries in 2007. Countries with higher GDP per capita generally have higher life expectancy, although there is variation within continents."
+#| label: redesigned-graph
+
+ggplot(gapminder_2007,
+       aes(
+         x = gdp_per_capita,
+         y = life_expectancy,
+         color = continent
+       )) +
+  geom_point(size = 2.5, 
+             alpha = 0.75) +
+  scale_x_log10()+
+  scale_color_viridis_d() +
+  labs(
+    title = "Countries With Higher GDP per Capita Generally Have Higher Life Expectancy",
+    subtitle = "Comparison of Countries in 2007",
+    x = "GDP per Capita (US$)",
+    y = "Life Expectancy (Years)",
+    color = "Continent",
+    caption = "Source: Gapminder dataset"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "bottom"
+  )
+
+```
+
+### Highlighting 
+
+```{r}
+#| label: highlight-version
+
+ggplot(gapminder_2007,
+       aes(
+         x = gdp_per_capita,
+         y = life_expectancy
+       )) +
+  geom_point(
+    data = filter(gapminder_2007,
+                  continent != "Africa"),
+    color = "gray70",
+    size = 2,
+    alpha = 0.5
+  ) +
+  geom_point(
+    data = filter(gapminder_2007,
+                  continent == "Africa"),
+    color = "#F47C20",
+    size = 3, 
+    alpha = 0.9
+  ) +
+  scale_x_log10() +
+  labs(
+    title = "Africa Shows Lower Life Expectancy Across a Wide Range of GDP Levels",
+    subtitle = "African countries highlighted against other countries in 2007",
+    x = "GDP per Capita (US$)",
+    y = "Life Expectancy (Years)",
+    caption = "Source: Gapminder dataset"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Accessibility Review
+
+Evaluate color dependence, contrast, font size, legend use, grayscale readability, and alt text.
+
+- The redesigned graphs reduce dependence on color by using clear labels, position, and differences in point size and transparency to communicate information. The contrast between the background and text is strong, which improves readability. The font size is large enough to make the title, axis labels, and other important information easier to read. The legend is positioned at the bottom and contains only a small number of categories, reducing clutter. The graph should remain understandable in grayscal because the primary information is communicated through the position of the graph and summarizes the main finding for people who use screen readers. 
+
+## Published Graphic Critique
+
+Critique an instructor-approved public health graphic for purpose, data, chart choice, accessibility, uncertainty, and ethics.
+
+- The purpose of this graphic is to compare teacher salaries between local government/public schools and private schools across different teaching occupations, including preschool, kindergarten, elementary, middle, and secondary teachers. The data are presented as annual salary amounts, but the graphic does not identify the data source, year of collection, sample size, geographic lacation, or whether the salaries represent averages, medians, or estimates. A grouped bar chart is an appropriate choice becasue it allows viewers to compare salaries between public and private schools within each occupation; however, a clearer finding-focused title could emphasize that public school teachers have higher reported salaries across all categories. The graphic is relativley accessible because it uses large text, direct dollar labels, and only two categories, but it relies partly on color to distinguish the groups, which could create difficuties for some viewers with color-vision deficiencies. The graphics also provides no information about uncertainty, such as confidence intervals, variation in salaries, or the number of teachers represented, which makes it difficult to determine how precise or representative the differences are. From an ethical perspective, the graphic should avoid suggesting that school type alone causes differences in teacher salaries because factors such as location, education, experience, union status, benefits, and cost of living may also influence compensation. Overall, the graphic communicates the basic salary comparison effectively, but adding a data source, data, definitions, uncertainty information, and additional context would make it more useful and responsible as a public health-related graphic.  
+
+
+
+
+
