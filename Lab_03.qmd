@@ -1,0 +1,355 @@
+---
+title: "Lab 3: Data Wrangling for Visualization"
+author: "Joshua Liggins"
+editor: visual
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-tools: true
+execute:
+  eval: false
+  warning: false
+  message: false
+---
+# Creating the Raw Data
+
+## Load Packages 
+```{r}
+library(tidyverse)
+```
+
+## Raw-data
+```{r}
+raw_health_data <- tibble(
+  county = c(
+    "Clayton",
+    "Cobb",
+    "Dekalb",
+    "Fulton",
+    "Gwinnett",
+    "Henry",
+    "Rockdale",
+    "Cherokee",
+    "Douglas",
+    "Fulton"
+  ),
+  region = c(
+    "Central",
+    "North",
+    "Central",
+    "Central",
+    "North",
+    "South",
+    "Central",
+    "North",
+    "South",
+    "Central"
+  ),
+  population_2023 = c(
+    300000,
+    770000,
+    760000,
+    1080000,
+    970000,
+    250000,
+    95000,
+    300000,
+    150000,
+    1080000
+  ),
+  cases_2023 = c(
+    4200,
+    5800,
+    6100,
+    8500,
+    6900,
+    3200,
+    1800,
+    2500,
+    2100,
+    8500
+  ),
+  population_2024 = c(
+    305000,
+    780000,
+    765000,
+    1090000,
+    985000,
+    255000,
+    97000,
+    310000,
+    155000,
+    1090000
+  ),
+  cases_2024 = c(
+    4500,
+    6000,
+    NA,
+    8800,
+    7100,
+    3400,
+    1900,
+    2700,
+    2200,
+    8800
+  )
+)
+raw_health_data
+```
+
+# Diagnose
+
+## Diagnose-data
+
+```{r}
+glimpse(raw_health_data)
+```
+```{r}
+raw_health_data %>%
+  count(county) %>%
+  filter(n > 1)
+```
+```{r}
+raw_health_data %>%
+  summarize(
+    across(
+      everything(),
+      ~ sum(
+        is.na(.)
+      )
+    )
+  )
+```
+# Remove Duplicates 
+
+## removing dupicates
+
+```{r}
+health_data_clean <- raw_health_data %>%
+  distinct(
+    county,
+    .keep_all = TRUE
+  )
+```
+
+```{r}
+health_data_clean %>%
+  count(county)
+```
+
+# Reshape Long 
+
+## Reshape-long 
+
+```{r}
+health_data_long <- health_data_clean %>%
+  pivot_longer(
+    cols = c(
+      population_2023,
+      cases_2023,
+      population_2024,
+      cases_2024
+    ),
+    names_to = c(
+      ".value",
+      "year"
+    ),
+    names_pattern = "(population|cases)_(\\d{4})"
+  ) %>%
+  mutate(
+    year = as.integer(year)
+  )
+health_data_long
+```
+
+# Calculate Rates
+
+## Calculate-rates 
+
+```{r}
+health_data_long <- health_data_long %>%
+  mutate(
+    rate_per_100000 = (cases / population) * 100000
+  )
+health_data_long
+```
+
+# Summarize 
+
+## Summarize-region
+
+```{r}
+regional_summary <- health_data_long %>%
+  group_by(
+    region, 
+    year
+  ) %>%
+  summarize(
+    mean_rates = mean(
+      rate_per_100000, 
+      na.rm = TRUE
+    ),
+    .groups = "drop"
+  )
+regional_summary
+```
+
+# Join Contextual Data 
+
+## Join data 
+
+```{r}
+rural_status <- tibble(
+  county = c(
+    "Clayton",
+    "Cobb",
+    "Dekalb",
+    "Fulton",
+    "Gwinnett",
+    "Henry",
+    "Rockdale",
+    "Cherokee",
+    "Douglas"
+  ),
+  rural_status = c(
+    "Urban",
+    "Urban",
+    "Urban",
+    "Urban",
+    "Suburban",
+    "Suburban",
+    "Suburban",
+    "Suburban",
+    "Rurual"
+  )
+)
+rural_status
+```
+
+```{r}
+health_data_joined <- health_data_long %>%
+  left_join(
+    rural_status,
+    by = "county"
+  )
+```
+
+```{r}
+rural_status %>%
+  count(county) %>%
+  filter( n > 1 )
+```
+
+```{r}
+health_data_joined %>%
+  filter(
+    is.na(
+      rural_status
+    )
+  )
+```
+
+```{r}
+nrow(health_data_long)
+nrow(health_data_joined)
+```
+
+# Visualize
+
+## Visualizations 
+
+### Regional line graph 
+
+```{r}
+regional_summary %>%
+  ggplot(
+    aes(
+      x = year,
+      y = mean_rates,
+      group = region,
+      color = region
+    )
+  ) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  labs(
+    title = "Mean Health Case Rate by Region",
+    x = "Year",
+    y = "Cases per 100,000",
+    color = "Region"
+  ) +
+  theme_minimal()
+```
+
+### Ranked 2024 county graph
+
+```{r}
+health_data_joined %>%
+  filter(year == 2024) %>%
+  ggplot(
+    aes(
+      x = rate_per_100000,
+      y = reorder(county, rate_per_100000)
+    )
+  ) +
+  geom_col() +
+  labs(
+    title = "County Health Case Rates in 2024",
+    x = "Cases per 100,000",
+    y = "County"
+  ) +
+  theme_minimal()
+health_data_joined
+```
+
+### Rural-status comparison
+
+```{r}
+health_data_joined %>%
+  filter(year == 2024) %>%
+  ggplot(
+    aes(
+      x = rural_status,
+      y = rate_per_100000,
+      fill = rural_status
+    )
+  ) +
+  geom_boxplot() +
+  labs(
+    title = "Health Case Rates by Rural Status in 2024",
+    x = "Rural Status",
+    y = "Cases per 100,000",
+    fill = "Rural Status"
+  ) +
+  theme_minimal()
+health_data_joined
+```
+
+# Reflection 
+
+1. Why was long format useful? 
+- Long format was useful becasue it organized the data so that each row reprsented a county-year combination. This made it easier to calculate rates, summarize the data by region and year, and create visualizations using `ggplot2`. It also allowed the same variables, such as population and cases, to be used consistently across mutiple years. 
+
+2. What causes row multiplication during joins? 
+- Row multiplication can occur when the dataset being joined contains multiple rows for the same key, such as a county. If a county appears more than once in the contextual dataset, `left_joint()` can match multiple rows to the same county in the health dataset. This can create duplicate observations and lead to incorrect summaries and visualizations. 
+
+3. Why are rates preferable to counts? 
+- Rates are preferable to counts when comparing populations of different sizes because they account for differences in population. A county with a larger population may have more cases simply becasue more people live there. Using cases per 100,000 allows for a more meaningful comparison of disease burden across counties and regions.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
