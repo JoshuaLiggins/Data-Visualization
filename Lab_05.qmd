@@ -1,0 +1,25 @@
+---
+title: "Lab 5: Professional Quarto Portfolio Website" 
+author: "Joshua Liggins"
+format: html
+editor: visual
+---
+
+## Peer Reviewed 
+
+- Two Strengths
+1. Professional and Consistent design
+2. Clear connection to my professional goals
+
+- Two Recommendations
+1. Add more specific professional experience:
+2. Continue improving the website's content and navigation.
+
+- Question a Hiring Manager Might Ask 
+Can you describe one of your public health research or data visualization projects and explain how you use the information to address a real-world public health problem?
+
+## Reflection
+1. I wanted my website to present me as a public health professional, researcher, and emerging physician interested in environmental health, health equity, research, and data.
+2. I used an orange, black, and white color scheme to create a professional and consistent appearance. I also organized the website into sections for my education, experience, skills, projects, CV, and contact information.
+3. I used clear headings, readable text, strong color contrast, and organized sections to make the website easy to navigate. I also included alternative text for images and considered mobile-friendly design.
+4. The most challenging part was learning how to connect my RStudio project to GitHub and understand commits, repositories, and pushing changes. With practice, I became more comfortable using GitHub for version control and sharing work. 
