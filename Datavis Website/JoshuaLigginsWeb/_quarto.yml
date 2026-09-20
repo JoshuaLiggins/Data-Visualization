@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Joshua Liggins"
+
+  navbar:
+    background: "#000000"
+    foreground: "#FFFFFF"
+
+    left:
+      - href: index.qmd
+        text: Home
+
+      - href: about.qmd
+        text: About
+
+      - href: education.qmd
+        text: Education
+
+      - href: experience.qmd
+        text: Experience
+
+      - href: skills.qmd
+        text: Skills
+
+      - href: project.qmd
+        text: Research & Projects
+
+      - href: cv.qmd
+        text: CV
+
+      - href: contact.qmd
+        text: Contact
+
+    right:
+      - icon: github
+        href: https://github.com/JoshuaLiggins
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+

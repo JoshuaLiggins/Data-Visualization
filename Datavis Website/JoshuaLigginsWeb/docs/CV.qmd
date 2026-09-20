@@ -1,0 +1,62 @@
+---
+title: "CV"
+---
+
+<div class="cv-hero">
+
+<span class="eyebrow">CURRICULUM VITAE</span>
+
+# Joshua Liggins
+
+## Curriculum Vitae
+
+My curriculum vitae provides an overview of my academic background, professional experience, research interests, skills, and accomplishments.
+
+
+</div>
+
+## Academic Background
+
+### Morehouse College
+
+**Undergraduate Education**  
+Graduated: **2020**  
+GPA: **3.5**
+
+### Towers High School
+
+**High School Education**  
+Graduated: **2016**  
+GPA: **3.8**
+
+## Research Interests
+
+My research interests include:
+
+- Environmental health
+- Epidemiology
+- Health equity
+- Community health
+- Healthcare access
+- Environmental justice
+- Data visualization
+- Sustainability
+- Public health policy
+
+## Professional Focus
+
+I am interested in work that connects **public health research, environmental health, data, healthcare, and community engagement**.
+
+For a complete overview of my education, experience, skills, research interests, and professional development, please view my full curriculum vitae.
+
+<div class="cv-download">
+
+<a href="cv/Joshuacv.pdf" class="button">
+View Full CV
+</a>
+
+<a href="cv/Joshuacv.pdf" class="button button-outline" download>
+Download CV
+</a>
+
+</div>

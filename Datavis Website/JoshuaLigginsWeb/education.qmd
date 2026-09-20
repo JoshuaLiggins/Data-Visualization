@@ -1,0 +1,90 @@
+---
+title: ""
+editor: visual
+---
+
+<div class="education-hero">
+
+<span class="eyebrow">ACADEMIC JOURNEY</span>
+
+# Education
+
+## Building a Foundation for Public Health & Community Impact
+
+My academic journey has provided me with a strong foundation in leadership, critical thinking, research, and service. Each stage of my education has contributed to my professional development and my commitment to improving community health. 
+
+</div> 
+
+## Academic Journey 
+
+<div class="education-timeline">
+
+<div class="education-card">
+
+<div class="education-year">2020</div>
+
+### Morehouse College
+
+**Undergraduate Education**
+
+**Graduated:** 2020
+**GPA:** 3.5
+
+My undergraduate education at Morehouse College provided an important foundation for my continued academic and professional development. My experience strengthened my interest in service, leadership, research, and creating opportunities that can positively impact communities.
+
+</div> 
+
+<div class="education-card">
+
+<div class="education-year">2016</div>
+
+### Towers High School
+
+**High School Education**
+
+**Graduated:** 2016
+**GPA:** 3.8
+
+My high school experience at Towers High School established the foundation for my academic journey. It helped develop the discipline, curiosity, and commitment to learning that I continued to build upon throughout my undergraduate education and professional development. 
+
+</div>
+
+</div>
+
+## Academic Highlights
+
+
+
+<div class="card">
+
+### Academic Achievement 
+
+Maintained a **3.5 GPA** during my undergradute education at Morehouse College.
+
+</div> 
+
+<div class="card">
+
+### Early Achievement
+
+Graduated from Towers High School with a **3.8 GPA**, establishing a strong academic foundation. 
+
+</div>
+
+<div class="card">
+
+### Continued Growth
+
+Continuing to build upon my educational foundation through graduate-level public health education, research, and professional development. 
+
+</div>
+
+</div>
+
+## Looking Forward
+
+My educational journey continues to shape my interest in **public health, environmental health, epidemiology, health equity, and healthcare**. I am committed to using education and research as tools for understanding complex health challenges and developing practical solutions that can improve communities. 
+
+> **Education is not simply a milestone-it is a foundation for continued growth, service, and impact.**
+
+

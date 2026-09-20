@@ -1,0 +1,497 @@
+/* =========================
+   COLOR PALETTE
+   ========================= */
+   
+:root {
+  --orange: #F47C20;
+  --dark-orange: #D96310; 
+  --black: #111111;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --gray: #666666;
+}
+
+/* =========================
+   GENERAL
+   ========================= */
+   
+body {
+  color: var(--black);
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  color: var(--black);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin-top: 2.5rem;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+   
+.navbar {
+  border-bottom: 3px solid var(--orange);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 100px 50px;
+  margin-bottom: 60px;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  color: var(--orange);
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 750px;
+}
+
+/* =========================
+   EYEBROW
+   ========================= */
+   
+.eyebrow {
+  color: var(--orange);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+   
+.button {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white) !important;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: var(--dark-orange);
+}
+
+/* =========================
+   CARDS
+   ========================= */
+   
+.grid {
+  display: grid;
+  grid-template-colums: repeat(3, 1fr);
+  gap: 25px;
+  margin: 30px 0 60px 0;
+}
+
+.card {
+  background: var(--light-gray);
+  padding: 30px;
+  border-top: 4px solid var(--orange);
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* =========================
+   QUOTE / GOAL
+   ========================= */
+
+blockquote {
+  border-left: 5px solid var(--orange);
+  padding: 20px 25px;
+  background: var(--light-gray);
+  font-size: 1.2rem;
+}
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta {
+  background: var(--black);
+  color: var(--white);
+  padding: 50px;
+  margin-top; 70px;
+  text-align: center;
+}
+
+.cta h3 {
+  color: var(--white);
+}
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+  color: var(--dark-orange);
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 25px;
+  }
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 25px auto;
+  border: 4px solid var(--orange);
+}
+
+/* Education Page */
+
+.education-hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 70px 50px;
+  margin-bottom: 60px;
+  border-bottom: 5px solid var(--orange);
+}
+
+.education-hero h1 {
+  color: var(--white);
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.education-hero h2 {
+  color: var(--orange);
+  font-size: 1.5rem;
+}
+
+.education-hero p {
+  max-width: 800px;
+  line-height: 1.8;
+}
+
+.education-timeline {
+  max-width: 900px;
+  margin: 40px auto 70px auto;
+}
+
+.education-card {
+  background: var(--light-gray);
+  border-left: 5px solid var(--orange);
+  padding: 35px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.education-card h3 {
+  font-size: 1.7rem;
+  margin-top: 5px;
+}
+
+.education-card p {
+  line-height: 1.7;
+}
+
+.education-year {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+  padding: 7px 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.education-card strong {
+  color: var(--dark-orange);
+}
+
+.education-card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   EXPERIENCE PAGE
+========================= */
+
+.experience-hero,
+.skills-hero,
+.contact-hero,
+.cv-hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 70px 50px;
+  margin-bottom: 60px;
+  border-bottom: 5px solid var(--orange);
+}
+
+.experience-hero h1,
+.skills-hero h1,
+.contact-hero h1,
+.cv-hero h1 {
+  color: var(--white);
+  font-size: 3.5rem;
+}
+
+.experience-hero h2,
+.skills-hero h2,
+.contact-hero h2,
+.cv-hero h2 {
+  color: var(--orange);
+}
+
+
+/* =========================
+   EXPERIENCE CARDS
+========================= */
+
+.experience-timeline {
+  max-width: 950px;
+  margin: 40px auto 70px auto;
+}
+
+.experience-card {
+  background: var(--light-gray);
+  border-left: 5px solid var(--orange);
+  padding: 35px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.experience-icon {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.experience-card h3 {
+  font-size: 1.7rem;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.skill-card {
+  background: var(--light-gray);
+  padding: 30px;
+  border-top: 5px solid var(--orange);
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.skill-card h3 {
+  color: var(--dark-orange);
+}
+
+.skill-card li {
+  margin-bottom: 8px;
+}
+
+
+/* =========================
+   SKILL BARS
+========================= */
+
+.skill-bars {
+  max-width: 850px;
+  margin: 50px auto;
+}
+
+.skill-row {
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.skill-line {
+  width: 100%;
+  height: 10px;
+  background: #e5e5e5;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.skill-fill {
+  height: 10px;
+  background: var(--orange);
+  border-radius: 10px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 40px auto 70px auto;
+}
+
+.contact-card {
+  background: var(--light-gray);
+  padding: 30px;
+  border-top: 5px solid var(--orange);
+  border-radius: 5px;
+}
+
+.contact-card h3 {
+  color: var(--dark-orange);
+}
+
+.contact-card a {
+  color: var(--dark-orange);
+  font-weight: bold;
+}
+
+.contact-button {
+  text-align: center;
+  margin: 50px 0;
+}
+
+
+/* =========================
+   CV
+========================= */
+
+.cv-hero {
+  text-align: center;
+}
+
+.cv-hero p {
+  max-width: 750px;
+  margin: 20px auto;
+}
+
+.cv-download {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.button-outline {
+  background: transparent !important;
+  border: 2px solid var(--orange);
+  color: var(--orange) !important;
+  margin-left: 10px;
+}
+
+.button-outline:hover {
+  background: var(--orange) !important;
+  color: var(--white) !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .experience-hero,
+  .skills-hero,
+  .contact-hero,
+  .cv-hero {
+    padding: 50px 25px;
+  }
+
+  .experience-hero h1,
+  .skills-hero h1,
+  .contact-hero h1,
+  .cv-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

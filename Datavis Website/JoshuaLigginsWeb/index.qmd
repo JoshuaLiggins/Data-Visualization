@@ -1,0 +1,69 @@
+---
+title: "" 
+---
+
+::: {.hero}
+
+<div class="hero-content">
+
+<img src="images/joshua.jpg"
+     alt="Professional portrait of Joshua Liggins"
+     class="profile-image">
+
+<span class="eyebrow">PUBLIC HEALTH • RESEARCH • DATA</span>
+
+# Joshua Liggins 
+
+## Public Health Researcher & Emerging Physician
+
+I am passionate about using **research, data, and community engagement** to better understand health disparities and create healthier communities. 
+
+<a href="project.qmd" class="button">Explore My Work</a>
+
+</div>
+
+:::
+
+## My Focus
+
+
+::: {.card}
+### Research 
+
+Exploring public health questions through evidence-based research, literature reviews, and interdisciplinary collaboration.
+:::
+
+::: {.card}
+### Data & Visualization 
+
+Using R, RStudio, and data visualization to transform complex information into clear and meaningful insights. 
+:::
+
+::: {.card}
+### Environmental Health
+
+Examining how environmental, social, and economic factors influence community health and well-being. 
+:::
+
+
+## Current Research 
+
+### Data Centers & Public Health 
+
+My current research examines the public health impacts, risks, and mitigation approaches associated with data center development and management.
+
+This work brings together evidence from **public health,environmental science, engineering, sustainability, and policy** to better understand how communities can make informed decisions about data center development.
+
+## My Goal
+
+> **Use research, leadership, and community engagement to help create healthier and more equitable communities.**
+
+::: {.cta}
+
+### Let's Connect 
+
+Interested in research, public health, data, or collaboration? 
+
+<a href="about.qmd" class="button">Learn More About Me</a>
+
+:::

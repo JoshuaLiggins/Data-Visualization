@@ -1,0 +1,191 @@
+/* =========================
+   COLOR PALETTE
+   ========================= */
+   
+:root {
+  --orange: #F47C20;
+  --dark-orange: #D96310; 
+  --black: #111111;
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --gray: #666666;
+}
+
+/* =========================
+   GENERAL
+   ========================= */
+   
+body {
+  color: var(--black);
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  color: var(--black);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  margin-top: 2.5rem;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+   
+.navbar {
+  border-bottom: 3px solid var(--orange);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 100px 50px;
+  margin-bottom: 60px;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  color: var(--orange);
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 750px;
+}
+
+/* =========================
+   EYEBROW
+   ========================= */
+   
+.eyebrow {
+  color: var(--orange);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+   
+.button {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white) !important;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: var(--dark-orange);
+}
+
+/* =========================
+   CARDS
+   ========================= */
+   
+.grid {
+  display: grid;
+  grid-template-colums: repeat(3, 1fr);
+  gap: 25px;
+  margin: 30px 0 60px 0;
+}
+
+.card {
+  background: var(--light-gray);
+  padding: 30px;
+  border-top: 4px solid var(--orange);
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* =========================
+   QUOTE / GOAL
+   ========================= */
+
+blockquote {
+  border-left: 5px solid var(--orange);
+  padding: 20px 25px;
+  background: var(--light-gray);
+  font-size: 1.2rem;
+}
+
+/* =========================
+   CTA
+   ========================= */
+
+.cta {
+  background: var(--black);
+  color: var(--white);
+  padding: 50px;
+  margin-top; 70px;
+  text-align: center;
+}
+
+.cta h3 {
+  color: var(--white);
+}
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+  color: var(--dark-orange);
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 25px;
+  }
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

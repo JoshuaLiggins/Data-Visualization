@@ -1,0 +1,93 @@
+---
+title: ""
+editor: visual
+---
+
+<div class="contact-hero">
+
+<span class="eyebrow">LET'S CONNECT</span>
+
+# Contact
+
+## Research • Collaboration • Public Health
+
+I welcome opportunities to connect with professionals, researchers, students, organizations, and community partners who share an interest in improving public health and creating healthier communities.
+
+</div>
+
+## Get in Touch
+
+<div class="contact-grid">
+
+::: {.contact-card}
+
+### Email
+
+For professional inquiries, research opportunities, collaborations, or questions:
+
+**[Professional Email](mailto:ligginsjoshua@gmail.com)**
+
+:::
+
+::: {.contact-card}
+
+### GitHub
+
+Explore my public health data visualization projects, R work, and other academic projects.
+
+**[Visit My GitHub](https://github.com/JoshuaLiggins)**
+
+:::
+
+::: {.contact-card}
+
+### LinkedIn
+
+Connect with me professionally and follow my academic and professional development.
+
+**[Connect on LinkedIn](www.linkedin.com/in/joshua-liggins-359070203)**
+
+:::
+
+</div>
+
+## Areas of Interest
+
+
+
+::: {.card}
+### Public Health Research
+
+Research collaborations and projects focused on population and community health.
+:::
+
+::: {.card}
+### Environmental Health
+
+Research involving environmental exposures, sustainability, infrastructure, and community health.
+:::
+
+::: {.card}
+### Health Equity
+
+Projects focused on improving access to healthcare, information, and resources.
+:::
+
+::: {.card}
+### Data & Analytics
+
+Collaboration involving R, data visualization, public health data, and evidence communication.
+:::
+
+
+## Let's Connect
+
+Whether you are interested in **research, public health, environmental health, data visualization, healthcare, or community engagement**, I would be glad to connect.
+
+<div class="contact-button">
+
+<a href="mailto:YOUR-EMAIL@example.com" class="button">
+Email Me
+</a>
+
+</div>
