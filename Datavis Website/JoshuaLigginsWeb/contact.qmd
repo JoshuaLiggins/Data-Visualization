@@ -39,15 +39,6 @@ Explore my public health data visualization projects, R work, and other academic
 
 :::
 
-::: {.contact-card}
-
-### LinkedIn
-
-Connect with me professionally and follow my academic and professional development.
-
-**[Connect on LinkedIn](www.linkedin.com/in/joshua-liggins-359070203)**
-
-:::
 
 </div>
 
@@ -86,7 +77,7 @@ Whether you are interested in **research, public health, environmental health, d
 
 <div class="contact-button">
 
-<a href="mailto:YOUR-EMAIL@example.com" class="button">
+<a href="mailto:ligginsjoshua@gmail.com" class="button">
 Email Me
 </a>
 
