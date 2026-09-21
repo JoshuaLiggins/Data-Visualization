@@ -1,0 +1,164 @@
+---
+title: ""
+editor: visual
+---
+
+<div class="skills-hero">
+
+<span class="eyebrow">SKILLS & EXPERTISE</span>
+
+# Skills
+
+## Research • Data • Communication • Leadership
+
+My skill set combines public health research, data analysis, communication, leadership, and interdisciplinary problem-solving.
+
+</div>
+
+## Technical & Research Skills
+
+<div class="skills-grid">
+
+::: {.skill-card}
+
+### Research
+
+- Literature reviews
+- Public health research
+- Research question development
+- Evidence synthesis
+- Research methods
+- Critical appraisal
+- Public health writing
+
+:::
+
+::: {.skill-card}
+
+### Data & Analytics
+
+- R
+- RStudio
+- Tidyverse
+- Data cleaning
+- Data transformation
+- Descriptive analysis
+- Data visualization
+- Statistical interpretation
+
+:::
+
+::: {.skill-card}
+
+### Data Visualization
+
+- ggplot2
+- Public health dashboards
+- Data storytelling
+- Visual communication
+- Accessible data presentation
+- Communicating findings to non-technical audiences
+
+:::
+
+::: {.skill-card}
+
+### Public Health
+
+- Environmental health
+- Epidemiology
+- Health equity
+- Community health
+- Environmental justice
+- Health communication
+- Population health
+
+:::
+
+</div>
+
+## Professional Skills
+
+<div class="skills-grid">
+
+::: {.skill-card}
+
+### Communication
+
+- Professional writing
+- Public health communication
+- Presentation development
+- Audience-focused communication
+- Health literacy
+- Translating research into accessible information
+
+:::
+
+::: {.skill-card}
+
+### Leadership
+
+- Team collaboration
+- Project coordination
+- Community engagement
+- Problem-solving
+- Interdisciplinary collaboration
+- Service-oriented leadership
+
+:::
+
+::: {.skill-card}
+
+### Software & Tools
+
+- RStudio
+- R
+- Quarto
+- GitHub
+- Microsoft Office
+- Data visualization tools
+
+:::
+
+::: {.skill-card}
+
+### Professional Development
+
+- Research
+- Academic writing
+- Presentation skills
+- Portfolio development
+- Evidence-based decision-making
+- Continuous learning
+
+:::
+
+</div>
+
+## Areas of Expertise
+
+<div class="skill-bars">
+
+<div class="skill-row">
+<span>Public Health Research</span>
+<div class="skill-line"><div class="skill-fill" style="width: 90%;"></div></div>
+</div>
+
+<div class="skill-row">
+<span>Data Visualization</span>
+<div class="skill-line"><div class="skill-fill" style="width: 80%;"></div></div>
+</div>
+
+<div class="skill-row">
+<span>Public Health Communication</span>
+<div class="skill-line"><div class="skill-fill" style="width: 85%;"></div></div>
+</div>
+
+<div class="skill-row">
+<span>Environmental Health Research</span>
+<div class="skill-line"><div class="skill-fill" style="width: 85%;"></div></div>
+</div>
+
+</div>
+
+> **My goal is to continually expand my technical, research, and leadership skills while using them to address meaningful public health challenges.**

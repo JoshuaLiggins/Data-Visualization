@@ -1,0 +1,116 @@
+---
+title: ""
+editor: visual
+---
+
+<div class="experience-hero">
+
+<span class="eyebrow">PROFESSIONAL EXPERIENCE</span>
+
+# Experience
+
+## Public Health • Research • Leadership • Service
+
+My professional development has been shaped by experiences that have strengthened my interest in public health, research, community engagement, and creating meaningful solutions to complex health challenges.
+
+</div>
+
+## Professional Experience
+
+<div class="experience-timeline">
+
+<div class="experience-card">
+
+<div class="experience-icon">01</div>
+
+### Public Health Research
+
+**Research & Academic Projects**
+
+My academic and research experiences have focused on understanding public health challenges through evidence-based research, data analysis, literature reviews, and interdisciplinary approaches.
+
+My work has included exploring topics related to **environmental health, health equity, community health, sustainability, and access to healthcare**.
+
+</div>
+
+<div class="experience-card">
+
+<div class="experience-icon">02</div>
+
+### Data & Research
+
+**R • RStudio • Data Visualization**
+
+I have developed experience using R and RStudio to organize, analyze, and visualize public health data.
+
+My work includes data cleaning, data transformation, descriptive analysis, and creating visualizations that communicate public health findings in an accessible way.
+
+</div>
+
+<div class="experience-card">
+
+<div class="experience-icon">03</div>
+
+### Environmental Health Research
+
+**Environmental & Community Health**
+
+My research interests include understanding how environmental conditions and infrastructure can affect community health.
+
+Current areas of interest include **data centers, environmental exposures, energy and water use, air pollution, noise, sustainability, and environmental justice**.
+
+</div>
+
+<div class="experience-card">
+
+<div class="experience-icon">04</div>
+
+### Public Health Consulting Projects
+
+**Research • Analysis • Recommendations**
+
+I have worked on public health consulting projects that connect research evidence with organizational sustainability and community health.
+
+One example is a packaging circular-economy health gap analysis examining **waste-worker safety, microplastic exposure, and community burden** within the context of packaging and recycling systems.
+
+</div>
+
+
+
+## Professional Interests
+
+:::{.columns}
+
+::: {.columns width="50%"}
+### Public Health
+
+Evidence-based approaches to improving population and community health.
+:::
+
+:::{.columns width="50%"}
+### Environmental Health
+
+Understanding how environmental conditions influence health outcomes.
+:::
+
+:::{.columns width="50%"}
+### Health Equity
+
+Improving access to resources, information, and quality healthcare.
+:::
+
+:::{.columns width="50%"}
+### Research & Data
+
+Using research and data visualization to communicate meaningful public health findings.
+:::
+
+</div>
+
+## What I'm Building Toward
+
+My professional goal is to continue developing as a public health professional and emerging physician while building expertise at the intersection of **public health, environmental health, epidemiology, healthcare, and health equity**.
+
+I am particularly interested in research and initiatives that connect evidence with practical solutions for communities.
+
+> **Research provides the evidence. Service provides the purpose. Impact comes from connecting the two.**

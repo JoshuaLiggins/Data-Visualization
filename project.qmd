@@ -1,0 +1,57 @@
+---
+title: "Research & Projects"
+---
+
+## Data Centers & Public Health
+
+### Research Question
+
+> What public health impacts, risks, and mitigation approaches have been described in the literature related to data center development and management? 
+
+### Research Focus
+
+This project examines evidence across multiple disciplines, including: 
+
+- Public Health
+- Environmental health
+- Engineering 
+- Sustainability 
+- Environmental science 
+- Policy
+- Community health
+
+The goal is to better understand how communities can evaluate the potential benefits and burdens of data center development. 
+
+---
+
+## Data Visualization
+
+I use **R and Rstudio** to clean, analyze, and visualize public health data. 
+
+My coursework and projects include:
+
+- Data cleaning 
+- Data reshaping 
+- Statistical summaries
+- Public health rates 
+- Geographic comparisons
+- Data visualization 
+- 'ggplot2'
+
+---
+
+## Academic Projects
+
+### Public Health Data Analysis 
+
+Project involving the cleaning, reshaping, summarizing, joining, and visualization of public health datasets.
+
+### Environmental Health Research 
+
+Research examining environmental exposures, community health, sustainability, and health equity. 
+
+---
+
+## Tools I Use 
+
+`R` • `RStudio` • `Quarto` • `GitHub` • `ggplot2` • `dplyr` • `tidyr`

@@ -1,0 +1,47 @@
+---
+title: ""
+---
+<span class="eyebrow">ABOUT ME</span>
+
+I am a public health graduate student with interests in **environmental health, epidemiology. health equity, research, and data visualization**.
+
+My work focuses on understanding complex public health challenges and translating research into information that can support communities and decision-makers. 
+
+<img src="images/liggins.jpg"
+     alt="Joshua Liggins"
+     class="profile-image">
+
+## Areas of interest 
+
+- Public Health 
+- Environmental Health
+- Epidemiology
+- Health Equity 
+- Data Visualization 
+- Community Engagement 
+- Public Health Research
+- Sustainability 
+
+## Technical Skills 
+
+### Data & Research 
+
+- R
+- RStudio
+- Quarto
+- GitHub
+- Data Visualization 
+- Data Cleaning 
+- Literature Reviews
+
+### Research Interests
+
+My research interest include the intersection of: 
+
+**Environment -> Community -> Health -> Equity**
+
+I am particularly interested in how environmental and social conditions can influence health outcomes and how research can be used to support undeserved communities. 
+
+## Professional Vision 
+
+My long-term goal is to become a public health professional and emerging physician who uses **research, leadership. and community engagement** to address health disparities 
